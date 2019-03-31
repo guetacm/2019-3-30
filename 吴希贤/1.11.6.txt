@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+int a[100005];
+int n,m;
+bool judge(int mid)
+{
+    int sum=0,num=1;
+    for(int i=0;i<n;i++)
+    {
+        sum+=a[i];
+        if(sum>mid)
+        {
+            num++;
+            sum=a[i];
+        }
+    }
+    if(num>m)
+        return true ;
+    else
+        return false;
+}
+int solution(int ll,int rr)
+{
+    int mid;
+    while(ll!=rr)
+    {
+        mid=(ll+rr)/2;
+        if(judge(mid))
+            ll=mid+1;
+        else
+            rr=mid;
+    }
+    return ll;
+}
+
+int main()
+{
+    cin>>n>>m;
+    int sum=0, MAX=0;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+        sum+=a[i];
+        MAX=max(MAX,a[i]);
+    }
+    cout<<solution(MAX,sum);
+}

@@ -1,0 +1,23 @@
+#include<iostream>
+#include<cmath>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    double l,n,c;
+    cin>>l>>n
+    >>c;
+    double s=(1+n*c)*l;
+    double lef=0.0,rig=asin(1.0);
+    double mid;
+    while(rig-lef>1e-14)
+    {
+        mid=(rig+lef)/2;
+
+        if(s*sin(mid)/mid<=l)
+            rig=mid;
+        else
+            lef=mid;
+    }
+     printf("%.3lf\n", l/2*tan(lef/2));
+}
