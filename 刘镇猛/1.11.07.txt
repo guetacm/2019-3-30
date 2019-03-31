@@ -1,0 +1,35 @@
+#include<iostream>
+#include<algorithm>
+#include<cstring>
+using namespace std;
+int m,n, a[100001];
+int cz(int x)
+{
+	int l = 0, r = n; int min;
+	while (l <= r)
+	{
+		min = (l + r) / 2;
+		if (x == a[min]) return min;
+		else if (x > a[min]) l = min + 1;
+		else  r = min - 1;
+	}
+	return 0;
+}
+int main()
+{
+	int i;
+	cin >> n;
+	for ( i = 0; i < n; i++) cin >> a[i];
+	sort(a, a + n);
+	cin >> m;
+	for ( i = 0; a[i]<=m/2; i++)
+	{
+		int x = (m - a[i]);
+		if (cz(x) && cz(x) != i) 
+		{ cout << a[i] << " " << a[cz(x)]; 
+		     return 0;
+		}
+	}
+	cout << "NO";
+	return 0;
+}

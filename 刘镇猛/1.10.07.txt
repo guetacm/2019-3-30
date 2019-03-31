@@ -1,0 +1,43 @@
+#include<iostream>
+#include<algorithm>
+#include<cstring>
+using namespace std;
+bool cmp(const float&a, const float&b)
+{
+	return a < b;
+}
+bool cmp1(const float&a, const float&b)
+{
+	return a > b;
+}
+int main()
+{
+	float h; int n,i=0,j=0,t1,t2;
+	char str[10];
+	float g[41], b[41],s[41];
+	cin >> n;
+	while (n--)
+	{
+		cin >> str;
+		cin >> h;
+		getchar();
+		if (!strcmp( str , "male"))
+		{
+			b[i] = h;t1=i++;
+		}
+		else {
+			g[j] = h;t2=j++;
+		}
+	}
+	sort(b, b + t1+1, cmp);
+	for ( i = 0; i <= t1; i++)
+	{
+		cout << fixed << setprecision(2) << b[i]<<" ";
+	}
+	sort(g, g + t2+1, cmp1);
+	for ( j = 0; j <=t2; j++)
+	{
+		cout << fixed << setprecision(2) << g[j] << " ";
+	}
+
+}
