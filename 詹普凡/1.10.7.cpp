@@ -1,8 +1,13 @@
-//合影效果
+//鍚堝奖鏁堟灉
 #include<iostream>
 #include<algorithm>
 #include<iomanip>
 using namespace std;
+
+bool cmp(double a,double b){
+    return a>b;
+}
+
 int main(){
     int n;
     cin>>n;
@@ -23,15 +28,14 @@ int main(){
         }
     }
     sort(m,m+d);
-    sort(f,f+c);
+    sort(f,f+c,cmp);
     cout<<setiosflags(ios::fixed)<<setprecision(2);
     for(int i=0;i<d;i++){
         cout<<m[i]<<" ";
     }
-    for(int i=c-1;i>=1;i--){
+    for(int i=0;i<c-1;i++){
         cout<<f[i]<<" ";
     }
-    cout<<f[0]<<endl;
+    cout<<f[c-1]<<endl;
     return 0;
 }
-//写这个题目的时候不知道为什么cmp一直没有用，所以没写cmp。
