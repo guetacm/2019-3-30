@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1553934311 source:/home/nicoledy/Prac/NoiDS07/main.cpp
+	<iostream>
+	<algorithm>
+
