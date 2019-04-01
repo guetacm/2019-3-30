@@ -4,7 +4,7 @@
 #include<cstring>
 #include<algorithm>
 using namespace std;
-//emmmm»¹ÊÇ²»Ì«»á
+//emmmmÂ»Â¹ÃŠÃ‡Â²Â»ÃŒÂ«Â»Ã¡
 int m;
 int a[100];
 bool dir[100];
@@ -12,7 +12,7 @@ bool compare(int a, int b)
 {
     return a > b;
 }
-//¼ôÖ¦£¿£¿£¿
+//Â¼Ã´Ã–Â¦Â£Â¿Â£Â¿Â£Â¿
 bool dfs(int len,int aq,int per,int th)
 {
     if(th==0) return 1;
